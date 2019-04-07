@@ -45,7 +45,8 @@ public class Problem3MultiplyTwoArbitaryPrecisionIntegers {
 		return multipledData;
 	}
 	
-	
+//	There are m partial products, each with at most n + 1 digits. We perform 0(1) operationsoneachdigit in each partialproduct,so the timecomplexityis0(nm).
+
 //	public static long[] multiply(long[] arr1, long[] arr2) {
 //		String array1="";
 //		String array2="";
