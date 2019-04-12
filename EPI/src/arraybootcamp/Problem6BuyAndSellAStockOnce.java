@@ -1,9 +1,8 @@
-package arraybootcamp;import javax.swing.text.html.MinimalHTMLWriter;
+package arraybootcamp;
 
 public class Problem6BuyAndSellAStockOnce {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 	double[] arr=	{310,315,275,295,260,270,290,230,255,350};
 	System.out.println("Maximum Profit : "+getMaxProfit(arr));
 	}
