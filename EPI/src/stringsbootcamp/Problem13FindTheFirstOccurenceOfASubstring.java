@@ -4,7 +4,6 @@ public class Problem13FindTheFirstOccurenceOfASubstring {
 
 	public static void main(String[] args) {
 		System.out.println(rabinkarp("abcd","cdefabcdghijk"));
-		
 	}
 	
 	
