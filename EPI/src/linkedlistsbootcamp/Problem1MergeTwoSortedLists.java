@@ -15,6 +15,8 @@ public class Problem1MergeTwoSortedLists {
 		
 }
 	
+	//worst case scenario is when the both the nodes are of comparable length (equal length) )(node1.length + node2.length)
+	//length noted only for illustration purpose
 	private static Node<Integer> mergeSortedLinkedList(Node<Integer> node1, Node<Integer> node2) {
 		Node<Integer> dummyHead = new Node<Integer>(0,null);
 		Node<Integer> current = dummyHead;
@@ -32,8 +34,4 @@ public class Problem1MergeTwoSortedLists {
 		current.nextNode = p1!=null ? p1 :p2;
 		return dummyHead.nextNode;
 	}
-	
-	
-	
-
 }
