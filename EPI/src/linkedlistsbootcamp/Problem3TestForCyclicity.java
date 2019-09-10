@@ -43,6 +43,7 @@ public class Problem3TestForCyclicity {
 				}
 				
 				Node<Integer> cycleHead = head;
+				// tandem loop
 				while(cycleHead!=cycleIter) {
 					cycleHead = cycleHead.nextNode;
 					cycleIter= cycleIter.nextNode;
