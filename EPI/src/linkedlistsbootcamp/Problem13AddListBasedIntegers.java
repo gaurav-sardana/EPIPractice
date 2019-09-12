@@ -14,6 +14,8 @@ public class Problem13AddListBasedIntegers {
 			}
 	}
 	
+	
+	//time complexity O(m+n) and O(Max(m,n)), m,n are length of two lists
 	public static Node<Integer> addTwoNumbers(Node<Integer> num1 , Node<Integer> num2) {
 		
 		Node<Integer> dummyHead = new Node<Integer>(0,null);
