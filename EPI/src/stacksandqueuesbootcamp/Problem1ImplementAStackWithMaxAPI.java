@@ -8,9 +8,9 @@ import MyLinkedList.Node;
 public class Problem1ImplementAStackWithMaxAPI {
 
 	public static void main(String[] args) {
-		//Node< Integer> node = new Node<Integer>(10,new Node<Integer>(20,new Node<Integer>(30,new Node<Integer>(40,new Node<Integer>(50,null)))));
-		//printReverseLinkedList(node);
-		MyStack myStack = new MyStack();
+//		Node< Integer> node = new Node<Integer>(10,new Node<Integer>(20,new Node<Integer>(30,new Node<Integer>(40,new Node<Integer>(50,null)))));
+//		printReverseLinkedList(node);
+		MyStack2 myStack = new MyStack2();
 		myStack.push(10);
 		myStack.push(30);
 		myStack.push(15);
@@ -35,7 +35,8 @@ public class Problem1ImplementAStackWithMaxAPI {
 		}
 		
 		while(!deque.isEmpty()) {
-			System.out.println(deque.poll());
+			System.out.println(deque.pop());
+			//poll or pollFirst or pop or remove or removeFirst
 		}
 		
 	}
@@ -51,6 +52,7 @@ public class Problem1ImplementAStackWithMaxAPI {
 	}
 	
 	
+	//time complexity O(1) space O(n) 
 	public static class  MyStack {
 		
 		private Deque<ElementWithCachedMax> deque = new LinkedList<>();
@@ -74,6 +76,62 @@ public class Problem1ImplementAStackWithMaxAPI {
 		
 		private boolean empty() {
 			return this.deque.isEmpty();
+		}
+	}
+	
+	public static class MaxWithCount{
+		public Integer max;
+		public Integer count;
+		
+		public MaxWithCount(Integer max , Integer count) {
+			this.max = max;
+			this.count = count;
+		}
+	}
+	
+	
+	
+	//worst space complexity is O(n) but id the stack is prepared with smaller quantity, the addition space complexity is O(1), the best.
+	public static class MyStack2{
+		private Deque<Integer> elemDeque = new LinkedList<Integer>();
+		private Deque<MaxWithCount> cachedMaxWithCount = new LinkedList<MaxWithCount>();
+		
+		public boolean empty() {
+			return elemDeque.isEmpty();
+		}
+		public Integer peek() {
+			if(empty()) throw new IllegalStateException("peek() is empty");
+			return elemDeque.peekFirst();
+			
+		}
+		
+		public Integer max() {
+			if(empty()) throw new IllegalStateException("max() is empty");
+			return cachedMaxWithCount.peekFirst().max;
+		}
+		public Integer pop() {
+			if(empty()) throw new IllegalStateException("pop() is empty");
+			Integer poppedValue = elemDeque.removeFirst();
+			if(cachedMaxWithCount.peek().max.equals(poppedValue)) {
+				cachedMaxWithCount.peek().count-=1;
+				if(cachedMaxWithCount.peek().count.equals(0)) {
+					cachedMaxWithCount.removeFirst();
+				}
+			}
+			return poppedValue;
+		}
+		public void push(Integer ele) {
+			if(empty()) {
+				cachedMaxWithCount.addFirst(new  MaxWithCount(ele,1));
+			}else {
+				if(Integer.compare(ele, cachedMaxWithCount.getFirst().max)==0) {
+					cachedMaxWithCount.peekFirst().count+=1;
+				}else if(Integer.compare(ele, cachedMaxWithCount.getFirst().max)>0){
+					cachedMaxWithCount.addFirst(new  MaxWithCount(ele,1));
+				}
+			}
+			elemDeque.addFirst(ele);
+			
 		}
 	}
 	
