@@ -17,6 +17,7 @@ public class Problem10ImplementAQueueWithMaxAPI {
 		max1.enqueue(1);
 		max1.enqueue(0);
 		max1.enqueue(4);
+		System.out.println(max1.max());
 		max1.dequeue();
 		max1.dequeue();
 		max1.dequeue();
