@@ -70,27 +70,30 @@ public class Problem9ComputeTheKthNodeInAnInorderTraversal {
 		A.size = 16;
 		A.left = B;
 		A.right = I;
-		BinaryTreeNode<Integer> findkthNodeBT = findkthNodeBT(A, 2);
-		System.out.println(findkthNodeBT!=null  ? findkthNodeBT.ele : "kth is out of range of tree size");
+		BinaryTreeNode<Integer> findkthNodeBT = findkthNodeBT(A, 16);
+		System.out.println(findkthNodeBT != null ? findkthNodeBT.ele : "kth is out of range of tree size");
 	}
 
 	private static BinaryTreeNode<Integer> findkthNodeBT(BinaryTreeNode<Integer> root, int k) {
 
+		if (k < 1 || k > root.size) {
+			return null;
+		}
 		BinaryTreeNode<Integer> iter = root;
 		while (iter != null) {
 			int leftSize = iter.left != null ? iter.left.size : 0;
-			if (k > leftSize + 1) {// Kth node is the right
-				k -= (leftSize + 1);
+			if (k > leftSize + 1) {// it means we dont have to commute the left part hit the right part
+				k -= (leftSize + 1);// remove the current + left nodes from k we have to go for new kth from right
+									// node
 				iter = iter.right;
-
-			} else if (k - 1 == leftSize) { // found Kth node
-				return iter;
-			} else {// kth node is on the left
+			} else if (k - 1 == leftSize) {
+				return iter;// this is the kth Node
+			} else {
 				iter = iter.left;
 			}
+
 		}
-		// if k is between 1 and tree size, the line is unreachable
-		return null;
+		return null;// if the k is between 1 and tree size, the line is unreachable.
 	}
 
 }

@@ -1,7 +1,13 @@
 package binarytreesbootcamp;
 
-public class Problem10ComputeTheSuccessor {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
+public class Problem11ImplementAnInorderTraversalWithO_1Space {
+
+	// a traverse can be done using O(1) space complexity if the node has additional
+	// information (parent node)
 	public static void main(String[] args) {
 		BinaryTreeNode<Integer> M = new BinaryTreeNode<>();
 		M.ele = 641;
@@ -69,31 +75,40 @@ public class Problem10ComputeTheSuccessor {
 		B.parent = A;
 		I.parent = A;
 
-		BinaryTreeNode<Integer> successor = findSuccessor(A);
-		System.out.println(
-				successor != null ? successor.toString() : "It is the right most node of the BT, Hence no successor!");
+		List<Integer> inorderTraversal = inorderTraversal(A);
+		System.out.println(inorderTraversal.toString());
 	}
 
-	// time complexity O(h)
-	public static BinaryTreeNode<Integer> findSuccessor(BinaryTreeNode<Integer> root) {
-		BinaryTreeNode<Integer> iter = root;
-		// if the right node is present.
-		if (iter.right != null) {
-			iter = iter.right;
-			while (iter.left != null) {
-				iter = iter.left;
-			}
-			return iter;
-		}
-		// if right is null and we have to find the Grand++ Parent or if it is the last
-		// there is no successor.
-		while (iter.parent != null && iter.parent.right == iter) {
-			iter = iter.parent;
-		}
-		// returning null if there is no successor of the given node i.e. it is the
-		// right most node of the BT.
-		return iter.parent;
+	// additional space complexity is O(1) and time complexity is o(h)
+	//
+	private static List<Integer> inorderTraversal(BinaryTreeNode<Integer> root) {
 
+		BinaryTreeNode<Integer> prev = null, curr = root;
+		List<Integer> result = new ArrayList<Integer>();
+
+		while (curr != null) {
+			BinaryTreeNode<Integer> next;
+			if (curr.parent == prev) {
+				// we came down to curr from prev
+				if (curr.left != null) {
+					next = curr.left;
+				} else {
+					result.add(curr.ele);
+					// done with the left now go for the right if right isn't empty else go up
+					next = curr.right != null ? curr.right : curr.parent;
+				}
+			} else if (curr.left == prev) {
+				result.add(curr.ele);
+				// done with the left now go for the right if right isn't empty else go up
+				next = curr.right != null ? curr.right : curr.parent;
+			} else {
+				next = curr.parent;
+			}
+			prev = curr;
+			curr = next;
+		}
+
+		return result;
 	}
 
 }
