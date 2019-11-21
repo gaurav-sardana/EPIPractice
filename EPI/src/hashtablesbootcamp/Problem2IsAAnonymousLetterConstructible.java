@@ -9,6 +9,8 @@ public class Problem2IsAAnonymousLetterConstructible {
 		System.out.println(isLetterConstructibleFromMagazine("hellod", "helloWord"));
 	}
 
+//Time complexity worse case O(nm) n is the no of characters in Letter and m is the number of characters in Magazine
+//Space complexity is O(L) where L is the number of distinct characters in Letter.
 	public static boolean isLetterConstructibleFromMagazine(String letterText, String magazineText) {
 
 		Map<Character, Integer> charactersMapLetter = new HashMap<Character, Integer>();
