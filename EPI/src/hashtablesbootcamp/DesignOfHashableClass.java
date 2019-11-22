@@ -10,6 +10,7 @@ public class DesignOfHashableClass {
 	}
 
 	public static List<ContactList> mergeContactLists(List<ContactList> contactLists) {
+
 		return new ArrayList<>(new HashSet<>(contactLists));
 	}
 
