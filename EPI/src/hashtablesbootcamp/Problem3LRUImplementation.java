@@ -1,5 +1,6 @@
 package hashtablesbootcamp;
 
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
 
 public class Problem3LRUImplementation {
@@ -12,7 +13,7 @@ public class Problem3LRUImplementation {
 
 }
 
-// time complexity is O(1) for hash Table look up and O(1) for updating the queue, i.e. O(1)
+// time complexity is O(1) for hash Table look up and O(1) for updating the queue, i.e. O(1) overall
 class LRUCache {
 	private LinkedHashMap<Integer, Integer> isbnToPrice;
 
