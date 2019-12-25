@@ -17,9 +17,9 @@ public class Basic {
 		matches.add(new MatchResult("C", "F"));
 		matches.add(new MatchResult("C", "G"));
 		matches.add(new MatchResult("C", "H"));
-		matches.add(new MatchResult("H", "I"));
-		matches.add(new MatchResult("B", "J"));
-		System.out.println(canTeamABeatTeamB(matches, "A", "B"));
+		matches.add(new MatchResult("H", "J"));
+		matches.add(new MatchResult("J", "B"));
+		System.out.println(canTeamABeatTeamB(matches, "A", "C"));
 
 	}
 
@@ -31,13 +31,13 @@ public class Basic {
 // space and time complexity is O(E) , E is number of outcomes
 	public static boolean isReachableDFS(Map<String, Set<String>> graph, String curr, String dest,
 			Set<String> visited) {
-
 		if (curr.equals(dest)) {
 			return true;
-		} else if (visited.contains(curr) || null == graph.get(curr)) {
+		} else if (visited.contains(curr) || graph.get(curr) == null) {
 			return false;
 		}
 		visited.add(curr);
+
 		for (String team : graph.get(curr)) {
 			if (isReachableDFS(graph, team, dest, visited)) {
 				return true;
@@ -47,19 +47,17 @@ public class Basic {
 	}
 
 	public static Map<String, Set<String>> buildGraph(List<MatchResult> matches) {
-
 		Map<String, Set<String>> graph = new HashMap<String, Set<String>>();
-
 		for (MatchResult matchResult : matches) {
-			Set<String> edges = graph.get(matchResult.winningTeam);
-			if (null == edges) {
-				edges = new HashSet<>();
-				graph.put(matchResult.winningTeam, edges);
+			Set<String> edge = graph.get(matchResult.winningTeam);
+			if (edge == null) {
+				edge = new HashSet<>();
+				graph.put(matchResult.winningTeam, edge);
 			}
-			edges.add(matchResult.loosingTeam);
+			edge.add(matchResult.loosingTeam);
 		}
-
 		return graph;
+
 	}
 
 }
