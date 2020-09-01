@@ -9,7 +9,6 @@ public class EvenOdd {
 		printArray(arr);
 		evenOdd(arr);
 		printArray(arr);
-
 	}
 	public static void printArray(int[] arr) {
 		for(int a : arr) {
