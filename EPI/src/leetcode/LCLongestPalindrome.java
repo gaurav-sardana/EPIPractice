@@ -6,9 +6,7 @@ package leetcode;
  */
 public class LCLongestPalindrome {
     public static void main(String[] args) {
-
         longestPalindrome1("ababad");
-
     }
 
     //Time complexity: O(n3)
