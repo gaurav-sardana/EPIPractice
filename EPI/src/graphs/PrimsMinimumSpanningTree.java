@@ -22,7 +22,7 @@ public class PrimsMinimumSpanningTree {
     // Using cost adjacency matrix
 
     /**
-     * 1. Find minimum cost edge; introduce edges array(2 x (N-1); here N is number if vertex, put minimum edge into edges, Hint : check upper/lower triangular part
+     * 1. Find minimum cost edge; introduce edges array(2 x (N-1); here N is number of vertex, put minimum edge into edges, Hint : check upper/lower triangular part
      * 2. Introduce near array which represent all vertices with O for visited vertices, and
      * 3. Update the near array with nearest of minimum edge vertex found above ignoring already visited i.e. near[i] == 0,
      * 4. [Repeating Step]  Find minimum from near array and put into edges array and mark selected vertex as O

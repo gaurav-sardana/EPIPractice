@@ -1,8 +1,6 @@
 package graphs;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author gauravsardana
@@ -10,14 +8,32 @@ import java.util.Queue;
  */
 public class Graphs {
     public static class Edge {
-        int nbr; // neighbour
+        int destination; // neighbour
 
         int wt; // weight
 
-        public Edge(int nbr, int wt) {
-            this.nbr = nbr;
+        public Edge(int destination, int wt) {
+            this.destination = destination;
             this.wt = wt;
         }
+
+    }
+
+    public static class Node implements Comparable<Node> {
+        int vertex; // neighbour
+
+        int distance; // weight
+
+        public Node(int vertex, int distance) {
+            this.vertex = vertex;
+            this.distance = distance;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return Integer.compare(o.distance, this.distance);
+        }
+
     }
 
     public static void solve() {
@@ -28,7 +44,6 @@ public class Graphs {
         for (ArrayList<Edge> g : graph) {
             g = new ArrayList<>();
         }
-
 
     }
 
