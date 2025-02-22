@@ -17,7 +17,6 @@ public class DijkstraShortestDistance {
 
         for (int i = 0; i <= V; i++) {
             graph.add(new ArrayList<>());
-
         }
 
         graph.get(1).add(new Graphs.Edge(2, 50));
