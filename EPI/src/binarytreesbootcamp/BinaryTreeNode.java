@@ -3,8 +3,8 @@ package binarytreesbootcamp;
 public class BinaryTreeNode<T> {
 	public T ele;
 	public BinaryTreeNode<T> left, right;
-	public BinaryTreeNode<Integer> parent;
-	public BinaryTreeNode<Integer> next;
+	public BinaryTreeNode<T> parent;
+	public BinaryTreeNode<T> next;
 	int size;
 
 	public BinaryTreeNode(T ele, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
