@@ -70,23 +70,23 @@ public class TraversingBinaryTree {
     //time complexity is O(n) n is the number of nodes.
     // function call stack reaches the maximum depth of h,height of the tree, Hence space complexity is O(h) and no additional space complexity.
     //The minimum value of h is lg(n) (When tree is complete binary tree) and maximum is value of h is n-1(skewed binary tree)
-    private static void treeTraversal(BinaryTreeNode<Integer> root) {
+    public static void treeTraversal(BinaryTreeNode<Integer> root) {
         if (root != null) {
             // Pre-order (PLR) Processes the root before the traversals of left and right
             // children.
-//			System.out.println("Preorder : " + root.ele);
+			System.out.println("Preorder : " + root.ele);
             preOrder.append(root.ele).append(",");
             treeTraversal(root.left);
 
             // in order (LPR) Process the root after the traversal of left and before the
             // traversal of right.
-//			System.out.println("Inorder : " + root.ele);
+			System.out.println("Inorder : " + root.ele);
             inOrder.append(root.ele).append(",");
             treeTraversal(root.right);
 
             // post order (LRP) Process the root after the traversal of left and right
             postOrder.append(root.ele).append(",");
-//			System.out.println("Post Order : "+root.ele);
+			System.out.println("Post Order : "+root.ele);
         }
     }
 }

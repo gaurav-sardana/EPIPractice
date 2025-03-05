@@ -13,6 +13,10 @@ public class BinaryTreeNode<T> {
 		this.left = left;
 		this.right = right;
 	}
+	public BinaryTreeNode(T ele) {
+		super();
+		this.ele = ele;
+	}
 
 	public BinaryTreeNode() {
 		super();
