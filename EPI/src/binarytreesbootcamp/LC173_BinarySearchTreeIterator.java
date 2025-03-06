@@ -24,7 +24,7 @@ public class LC173_BinarySearchTreeIterator {
         return vals.size() > itrVal;
     }
 
-    private void inorder((BinaryTreeNode<Integer> treeNode) {
+    private void inorder(BinaryTreeNode<Integer> treeNode) {
         if (treeNode == null) return;
         inorder(treeNode.left);
         vals.add(treeNode.ele);
