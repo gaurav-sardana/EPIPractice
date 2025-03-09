@@ -8,6 +8,7 @@ public class Problem1SearchASortedArrayForFirstOccuranceOfK {
 	public static void main(String[] args) {
 		List<Integer> list = Arrays.asList(-14, -10, 2, 108, 108, 243, 285, 285, 285, 401);
 		System.out.println(searchFirstOfK(list, 285));
+		System.out.println(searchLastOfK(list, 285));
 
 	}
 
@@ -29,6 +30,23 @@ public class Problem1SearchASortedArrayForFirstOccuranceOfK {
 
 		}
 
+		return result;
+	}
+
+	public static int searchLastOfK(List<Integer> A, int k){
+		int start = 0, end = A.size()-1, result = -1;
+
+		while(start<= end){
+			int mid = start + (end -start)/2;
+			if(A.get(mid) < k){
+				start = mid +1;
+			}else if (A.get(mid) == k){
+				result = mid;
+				start = mid+1;
+			}else{
+				end = mid -1;
+			}
+		}
 		return result;
 	}
 }

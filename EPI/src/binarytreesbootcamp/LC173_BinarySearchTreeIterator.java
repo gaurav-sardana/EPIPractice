@@ -13,7 +13,7 @@ public class LC173_BinarySearchTreeIterator {
     List<Integer> vals = new ArrayList<>();
 
     public LC173_BinarySearchTreeIterator(BinaryTreeNode<Integer> treeNode) {
-          inorder(treeNode);
+        inorder(treeNode);
     }
 
     public int next() {

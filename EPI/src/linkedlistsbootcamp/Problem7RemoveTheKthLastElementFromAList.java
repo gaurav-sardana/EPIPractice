@@ -6,7 +6,7 @@ public class Problem7RemoveTheKthLastElementFromAList {
 
 	public static void main(String[] args) {
 		Node<Integer> node = new Node<Integer>(10,new Node<Integer>(20,new Node<Integer>(30,new Node<Integer>(40,new Node<Integer>(50,new Node<Integer>(60))))));
-		Node<Integer> removeKthLastNode = removeKthLastNode(node,0);
+		Node<Integer> removeKthLastNode = removeKthLastNode(node,2);
 		while(removeKthLastNode!=null) {
 			System.out.println(removeKthLastNode.value);
 			removeKthLastNode=removeKthLastNode.nextNode;
@@ -21,7 +21,7 @@ public class Problem7RemoveTheKthLastElementFromAList {
 		Node<Integer> first = dummyHead.nextNode;
 		
 		//first loop advanced by k
-		while(k-->0) {
+		while(k-- >0) {
 			first =  first.nextNode;
 		}
 		
