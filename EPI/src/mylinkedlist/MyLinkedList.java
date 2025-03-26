@@ -1,6 +1,4 @@
-package MyLinkedList;
-
-import java.util.Iterator;
+package mylinkedlist;
 
 public class MyLinkedList  {
 

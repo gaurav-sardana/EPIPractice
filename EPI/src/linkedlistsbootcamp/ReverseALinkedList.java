@@ -1,6 +1,6 @@
 package linkedlistsbootcamp;
 
-import MyLinkedList.Node;
+import mylinkedlist.Node;
 
 public class ReverseALinkedList {
 

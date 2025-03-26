@@ -1,6 +1,6 @@
 package linkedlistsbootcamp;
 
-import MyLinkedList.Node;
+import mylinkedlist.Node;
 
 import java.util.HashMap;
 import java.util.Map;

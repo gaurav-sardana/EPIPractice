@@ -3,7 +3,7 @@ package stacksandqueuesbootcamp;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import MyLinkedList.Node;
+import mylinkedlist.Node;
 
 public class Problem1ImplementAStackWithMaxAPI {
 

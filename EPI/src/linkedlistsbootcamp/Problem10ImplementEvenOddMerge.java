@@ -3,7 +3,7 @@ package linkedlistsbootcamp;
 import java.util.Arrays;
 import java.util.List;
 
-import MyLinkedList.Node;
+import mylinkedlist.Node;
 
 public class Problem10ImplementEvenOddMerge {
 
