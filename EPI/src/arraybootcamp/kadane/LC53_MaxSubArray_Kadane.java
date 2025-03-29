@@ -1,4 +1,4 @@
-package arraybootcamp;
+package arraybootcamp.kadane;
 
 public class LC53_MaxSubArray_Kadane {
     public static void main(String[] args) {
@@ -23,6 +23,7 @@ public class LC53_MaxSubArray_Kadane {
         return maxSum;
     }
 
+    // normal sum problem
     public static int maxSubArray2(int[] nums) {
 
         int maxSum = Integer.MIN_VALUE;
