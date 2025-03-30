@@ -2,7 +2,11 @@ package arraybootcamp.kadane;
 
 public class LC918_MaximumSumCircularSubarray {
     public static void main(String[] args) {
-
+        byte[] bytes = new byte[10];
+        char[] chars = new char[10];
+        String a = "abc";
+        String b = "abc";
+        System.out.println(a == b);
         System.out.println(maxSubArray(new int[]{5, -3, 5}));
         System.out.println(maxSubArray2(new int[]{5, -3, 5}));
 
