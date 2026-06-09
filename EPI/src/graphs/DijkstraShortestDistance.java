@@ -36,7 +36,7 @@ public class DijkstraShortestDistance {
 
         System.out.println("Vertex\tDistance from Source " + source);
         for (int i = 1; i < distances.length; i++) {
-            System.out.println(i + "\t" + distances[i]);
+            System.out.println(i + "\t" + (distances[i] == Integer.MAX_VALUE ? -1 : distances[i]));
         }
     }
 
